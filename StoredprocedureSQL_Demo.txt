@@ -1,0 +1,13 @@
+DELIMITER $$
+
+USE `1ejm10`$$
+
+DROP PROCEDURE IF EXISTS `demo`$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `demo`(price DOUBLE,id INT,temp INT)
+BEGIN
+UPDATE product SET product_price=price WHERE product_id=id;
+DELETE FROM product WHERE product_id=temp;
+	END$$
+
+DELIMITER ;
